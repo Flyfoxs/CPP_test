@@ -7,7 +7,6 @@ int main(){
     const int  c=4;
     const int  k=4;
     int xx=10;
-    std::cin >> xx;
     const int default_value = -1;
 
     int a[c][k];
