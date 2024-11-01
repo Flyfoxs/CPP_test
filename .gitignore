@@ -1,0 +1,12 @@
+#build file
+*.obj
+*.o
+#bin file
+*.bin
+*.out
+#backup file
+*~.bak
+#log file
+*.log
+.cache
+build
