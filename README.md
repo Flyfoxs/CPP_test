@@ -1,4 +1,5 @@
 # CPP_test
-- clang++ -o main main.cpp && ./main
+- clang++ -o build/main.out main.cpp && ./build/main.out
+- g++ -o build/main.out main.cpp && ./build/main.out
 
 - CodeLLDB is required
