@@ -2,3 +2,5 @@ build
 main
 **/*.out
 .cache
+.ccls-cache/
+.replit
