@@ -4,3 +4,9 @@ main
 .cache
 .ccls-cache/
 .replit
+cmake-build-debug
+.history
+.idea
+input_data
+del.log
+**/*_out.txt
