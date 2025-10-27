@@ -11,3 +11,4 @@ brew instal gcc@14
 
 # Local
 g++-14 -o main.out decode.cpp && ./main.out
+g++-14 -o main.out main.cpp && ./main.out
