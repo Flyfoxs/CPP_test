@@ -39,11 +39,11 @@ int main() {
     cout<<diff.size()<<endl;
     cout<<"total_area="<<h<<endl;
     
-    map<int, ll>::iterator it;
     int sum =0;
     ll old_gap = 999999999;
     int sum_mj =0;
     int best_d = 0;
+    map<int, ll>::iterator it;
     for (it = diff.begin(); it != diff.end(); ++it) {
         cout<<"key="<<it->first<<" value="<<it->second<<endl;
         sum_mj+=it->second;
