@@ -4,12 +4,12 @@ int n,d;
 long long qzh[100010];//前缀和
 int zd[100010];//站点
 struct node{
-	int v,a;//距离，价格  
-	int jy_jl; //加油距离,
+	long long  v,a;//距离，价格  
+	long long  jy_jl; //加油距离,
 	bool is_jy;
 	float sy_y; //剩余的油
-	int next_zd; //下一个加油站
-	int total_jl; //总距离
+	long long  next_zd; //下一个加油站
+	long long  total_jl; //总距离
 }va[100010];
 int main(){
 	freopen("road.in","r",stdin);
@@ -19,7 +19,7 @@ int main(){
 	// qzh[0]=va[0].v;
 	for(int i=0;i<=n-2;i++){
 		cin>>va[i].v;
-		cout<<"距离="<<va[i].v<<endl;
+		// cout<<"距离="<<va[i].v<<endl;
 		// qzh[i]=qzh[i-1]+va[i].v;
 	}//输入距离
 
@@ -28,25 +28,25 @@ int main(){
 	va[0].sy_y=0;
 	for(int i=1; i<n; i++){
 		qzh[i]=va[i-1].v+qzh[i-1];
-		va[i].total_jl=qzh[i];
+		va[i].total_jl=va[i-1].v+ va[i-1].total_jl;
 		va[i].sy_y=ceil(va[i].total_jl*1.0/d) - va[i].total_jl*1.0/d;
 	}
 	// qzh[n-1]=qzh[n-2]+va[n-2].v;
 	for(int i=0;i<n;i++){
-		cout<<"qzh["<<i<<"]="<<qzh[i]<<endl;
+		// cout<<"qzh["<<i<<"]="<<qzh[i]<<endl;
 	}
 //	cout<<endl;
 	for(int i=0;i<n;i++){
 		cin>>va[i].a;
-		cout<<"加油站"<<i<<", 价格="<<va[i].a<<endl;
+		// cout<<"加油站"<<i<<", 价格="<<va[i].a<<",距离原点="<<va[i].total_jl<<endl;
 	}//输入价格
 	// zd[0]=0;
 	int tmp_1=0;
 	int last_jg=999999999;
-	for(int i=0;i<n;i++){
+	for(int i=0;i<n-1;i++){
 		if(va[i].a<last_jg){
 		    last_jg=va[i].a;
-			cout<<"加油站"<<i<<", 价格="<<last_jg<<endl;
+			// cout<<"进去 加油站"<<i<<", 价格="<<last_jg<<endl;
 			zd[tmp_1]=i;
 			tmp_1++;
 			va[i].is_jy=true;
@@ -59,30 +59,33 @@ int main(){
 	for(int i=0;i<=tmp_1;i++){
 		va[i].next_zd=zd[i+1];
 		int tmp_s=qzh[zd[i+1]]-qzh[zd[i]];//两点之间的距离
-		va[zd[i]].jy_jl=tmp_s;
-		cout << left << setw(10) << "qzh=" << setw(8) << qzh[i]
-		     << setw(10) << "距离=" << setw(8) << tmp_s
-		     << setw(6)  << "zd=" << setw(4) << zd[i]
-		     << setw(12) << "next_zd=" << setw(6) << zd[i+1]
-		     << setw(14) << "剩余的油=" << setw(10) << fixed << setprecision(4) << va[i].sy_y
-		     << setw(14) << "下一站距离=" << setw(10) << va[i].jy_jl
-		     << endl;
+		va[zd[i]].jy_jl=va[zd[i+1]].total_jl-va[zd[i]].total_jl;
+		// cout << left << setw(10) << "qzh=" << setw(8) << qzh[i]
+		//      << setw(10) << "距离=" << setw(8) << tmp_s
+		//      << setw(6)  << "zd=" << setw(4) << zd[i]
+		//      << setw(12) << "next_zd=" << setw(6) << va[i].next_zd
+		//      << setw(14) << "剩余的油=" << setw(10) << fixed << setprecision(4) << va[i].sy_y
+		//      << setw(14) << "下一站距离=" << setw(10) << va[i].jy_jl
+		//      << endl;
 	}
 //	cout<<endl;
+ 
+	// cout<<"总距离="<<va[n-1].total_jl<<endl;
+
 	double sy_q=0;//剩余的油 
-	int ans=0;
+	long long ans=0;
 	for(int i=0;i<tmp_1;i++){
 		
-		int tmp_s=qzh[zd[i+1]]-qzh[zd[i]];//两点之间的距离
+		long long tmp_s=va[zd[i]].jy_jl;//两点之间的距离
 		
-		double xy_y=tmp_s*1.0/d-sy_q;//需要用的油
-		double jia_y = ceil(xy_y); //需要添加的油
+		long double xy_y=tmp_s*1.0/d-sy_q;//需要用的油
+		long double jia_y = ceil(xy_y); //需要添加的油
 	 
 		ans=ans+jia_y*va[zd[i]].a; //钱
 //		sy_q=ceil(xy_y)*d*1.0-tmp_s;
 //		cout<<zd[i+1]<<" "<<zd[i]<<endl;
 		sy_q = sy_q + jia_y - tmp_s*1.0/d;
-		cout<<"i="<<i<<", 距离="<<tmp_s<<"， 需要的油="<<xy_y<<"， 钱"<<ans<<" 剩余的油"<<sy_q<<endl;
+		// cout<<"i="<<i<<", 距离="<<tmp_s<<"， 需要的油="<<xy_y<<"， 钱"<<ans<<" 剩余的油"<<sy_q<<endl;
 	}
 	cout<<ans;
 	return 0;
