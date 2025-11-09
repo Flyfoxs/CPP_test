@@ -12,3 +12,8 @@ brew instal gcc@14
 # Local
 g++-14 -o main.out decode.cpp && ./main.out
 g++-14 -o main.out main.cpp && ./main.out
+
+
+A1348：[CSP-J 2025] 座位 / seat
+A1349：[CSP-J 2025] 异或和 / xor
+A1350：[CSP-J 2025] 多边形 / polygon
