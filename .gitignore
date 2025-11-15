@@ -10,3 +10,5 @@ cmake-build-debug
 input_data
 del.log
 **/*_out.txt
+
+.vscode/settings.json

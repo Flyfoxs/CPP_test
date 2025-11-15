@@ -16,6 +16,19 @@
         "iostream": "cpp",
         "cmath": "cpp",
         "ostream": "cpp",
-        "__node_handle": "cpp"
+        "__node_handle": "cpp",
+        "*.tcc": "cpp",
+        "array": "cpp",
+        "memory_resource": "cpp",
+        "future": "cpp",
+        "mutex": "cpp",
+        "optional": "cpp",
+        "ranges": "cpp",
+        "scoped_allocator": "cpp",
+        "utility": "cpp",
+        "variant": "cpp",
+        "version": "cpp",
+        "functional": "cpp",
+        "format": "cpp"
     }
 }
