@@ -9,7 +9,8 @@ long long max_root = 1ll;
 
 void init_mat(long long sqre){
     long long cur_ans = 0;
-    for(long long i=max(1ll, max_root);i<= ceil(cbrt(sqre)) + 1;i++){
+    mat_n.clear();
+    for(long long i=max(1ll, max_root-2);i<= ceil(cbrt(sqre)) + 1;i++){
         long long index_begin = pow( i, 3);
         long long index_end = pow( i+1, 3)-1;
         mat_n[{index_begin, index_end}] = i;
@@ -22,8 +23,8 @@ void init_mat(long long sqre){
 }
 
 
-long long sum_mat(long long sqre){
-    init_mat(sqre);
+long long sum_mat(long long index_begin, long long index_end){
+    init_mat(index_end);
     long long previes_index = 0;
     long long previes_square_root = 0;
     long long sum = 0;
@@ -31,17 +32,22 @@ long long sum_mat(long long sqre){
         long long cur_index_begin = it->first.first;
         long long cur_index_end = it->first.second;
         long long cur_square_root = it->second;
+        if(index_begin >cur_index_end){
+            continue;
+        }
 
-        cur_index_end = min(cur_index_end, sqre);
+        cur_index_begin = max(cur_index_begin, index_begin);
+        cur_index_end = min(cur_index_end, index_end);
         sum = sum + (cur_index_end - cur_index_begin +1) * cur_square_root;
          
 
         // cout<<"cur_index_begin="<<cur_index_begin<<" cur_index_end="<<cur_index_end <<" cur_square_root="<<cur_square_root<<" sqre="<<sqre<<" sum="<<sum<<endl;
- 
+        
 
-        if(cur_index_end >= sqre){
+        if(cur_index_end >= index_end){
             break;
         }
+
     }
     // cout<<"sqre="<<sqre<<" sum="<<sum<<endl;
     return sum;
@@ -56,10 +62,16 @@ int main()
 
     long long q, n;
     cin>>q;
+    long long previous_n = 0;
+    long long previous_ans = 0;
     while(q--)
     {
         cin>>n;
-        cout<<sum_mat(n)<<endl;
+        previous_ans = previous_ans + sum_mat(previous_n+1,n);
+        cout<<previous_ans<<endl;
+
+        previous_n = n;
+
         
     }
     return 0;
