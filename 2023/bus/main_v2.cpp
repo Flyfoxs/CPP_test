@@ -51,7 +51,7 @@ void djikstra() {
      */
     priority_queue<PII> q;
 
-    // 初始状态：在城市 1，时间 0
+    // 初始状态：在 时间 0, 城市 1
     q.push(make_pair(0, 1)); 
 
 
@@ -59,20 +59,25 @@ void djikstra() {
 
         // 取出当前时间最小的点
         int t = abs(q.top().first); // 因为我们存的是 -time
-        int u = q.top().second;
+        int u = q.top().second; // 当前城市
         q.pop();
+        cout << "====== t=" << t << ", u=" << u << " g[*] size=" << g[u].size() << " q size=" << q.size() << " =======" << endl;
 
         // 当前时间的 (mod k)
         int j = t % k;
 
-        // 如果状态 (u, j) 已经确定过，就跳过
-        if (visited[u][j]) continue;
+        // 如果状态 (u, j) 已经确定过，就跳过, 特别是一个节点如果有多个入边的时候, 结果没有影响, 但是会影响性能
+        if (visited[u][j]) {
+            cout << "visited[u][j] = 1," << u << ", " << j << " continue" << endl;
+            continue;
+        }
         visited[u][j] = 1;  // 标记为已确定
 
         // 遍历所有从 u 出发的边
         for (int i = 0; i < g[u].size(); i++) {
             int v = g[u][i].v; // 下一站
             int a = g[u][i].a; // 最早出发时间限制
+            // cout << "next v=" << v << ", a=" << a << endl;
 
             /**
              * 当前到达时间为 t。
@@ -123,8 +128,8 @@ void djikstra() {
 
 
 int main() {
-    freopen("bus.in", "r", stdin);
-
+    freopen("3_in.txt", "r", stdin); 
+    // freopen("bus.out", "w", stdout);
     cin >> n >> m >> k;
 
     // 读入图
