@@ -1,0 +1,26 @@
+
+====== t=820142, start from(u)=949 g[*] size=3 f[u][j]=820142, =======
+ready to add: next v=950, a=885315
+t < a, t=820142, a=885315, j=11 wait=65178, f[u][j] + wait + 1 =885321, f[v][(j + 1) % k]=1061109567
+2: is_visited=0 ready to push v=950, f[v][(j + 1) % k]=885321
+ready to add: next v=957, a=884214
+t < a, t=820142, a=884214, j=11 wait=64107, f[u][j] + wait + 1 =884250, f[v][(j + 1) % k]=941829
+2: is_visited=0 ready to push v=957, f[v][(j + 1) % k]=884250
+ready to add: next v=957, a=834290
+t < a, t=820142, a=834290, j=11 wait=14178, f[u][j] + wait + 1 =834321, f[v][(j + 1) % k]=884250
+2: is_visited=0 ready to push v=957, f[v][(j + 1) % k]=834321
+
+
+
+====== t=825449, start from(u)=949 g[*] size=3 f[u][j]=820094, =======
+visited[u][j]949, 14 continue
+ready to add: next v=950, a=885315
+t < a, t=825449, a=885315, j=14 wait=59874, f[u][j] + wait + 1 =879969, f[v][(j + 1) % k]=820095
+2: no need to push v=950, f[v][(j + 1) % k]=820095
+ready to add: next v=957, a=884214
+t < a, t=825449, a=884214, j=14 wait=58803, f[u][j] + wait + 1 =878898, f[v][(j + 1) % k]=834324
+2: no need to push v=957, f[v][(j + 1) % k]=834324
+ready to add: next v=957, a=834290
+t < a, t=825449, a=834290, j=14 wait=8874, f[u][j] + wait + 1 =828969, f[v][(j + 1) % k]=834324
+error: f[u][j] + wait + 1=828969 f[v][(j + 1) % k]=834324
+2: is_visited=1 ready to push v=957, f[v][(j + 1) % k]=828969
