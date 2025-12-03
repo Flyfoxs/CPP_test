@@ -5,16 +5,9 @@ using namespace std;
 vector<int> mat_n ; //操作结果矩阵
 vector<vector<int>> mat_m; // 机器矩阵
 vector<int> oper_c; // 操作矩阵
+map<int, int> oper_c_map; // effect_map[i]表示机器i执行一次对位置j的增量
 vector<vector<int>> effect; // effect[i][j]表示机器i执行一次对位置j的增量
 
-//执行li到ri的机器
-void exec(int i, int j){
-    for(int k=i;k<=j;k++){
-        int a = mat_m[k][1];
-        int y = mat_m[k][2];
-        mat_n[a] = mat_n[a] + y;
-    }
-}
 
 // 预处理：计算每个机器执行一次的效果
 void precompute_effect(int n, int m){
@@ -42,8 +35,9 @@ void precompute_effect(int n, int m){
 
 // 执行机器（优化版本：直接应用预处理的效果）
 void exec_machine_optimized(int machine_index){
+    int count = oper_c_map[machine_index];
     for(int i=1; i<mat_n.size(); i++){
-        mat_n[i] = (mat_n[i] + effect[machine_index][i]) % 10007;
+        mat_n[i] = (mat_n[i] + effect[machine_index][i]*count) % 10007;
     }
 }
 
@@ -86,7 +80,14 @@ int main()
 
     oper_c.resize(k+1);
     for(int i=1;i<k+1;i++){
-        cin>>oper_c[i];
+        int cur_oper;
+        cin>>cur_oper;
+        oper_c[i] = cur_oper;
+        if(oper_c_map.count(cur_oper) == 0){
+            oper_c_map[cur_oper] = 1;
+        }else{
+            oper_c_map[cur_oper]++;
+        }
 
     }
 
@@ -99,10 +100,16 @@ int main()
     precompute_effect(n, m);
 
     //执行操作（使用优化版本）
-    for(int i=1;i<k+1;i++){
-        int machine_index = oper_c[i];
+    // for(int i=1;i<k+1;i++){
+    //     int machine_index = oper_c[i];
+    //     exec_machine_optimized(machine_index);
+    //     // print_n();
+    // }
+
+    for(auto it = oper_c_map.begin(); it != oper_c_map.end(); it++){
+        // cout<<it->first<<" "<<it->second<<endl;
+        int machine_index = it->first;
         exec_machine_optimized(machine_index);
-        // print_n();
     }
 
 
