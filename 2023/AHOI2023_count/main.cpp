@@ -1,6 +1,6 @@
 # include<bits/stdc++.h>
 using namespace std;
-
+// 6247：[AHOI2023初中组]数数 (count)
 vector<long long> a;
 
 int dfs(int index, vector<long long> cur){

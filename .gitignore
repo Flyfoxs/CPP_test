@@ -12,3 +12,4 @@ del.log
 **/*_out.txt
 
 .vscode/settings.json
+*_tmp.cpp

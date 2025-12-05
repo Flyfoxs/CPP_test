@@ -25,7 +25,7 @@ A1350：[CSP-J 2025] 多边形 / polygon
 | Description | Directory | Tag|
 |------------|-----------|--|
 | A1349: [CSP-J 2025] 异或和 / xor | `2025/A1349_xor/` |
-| A1350: [CSP-J 2025] 多边形 / polygon | `2025/A1350_polygon/` |
+| A1350: [CSP-J 2025] 多边形 / polygon | `2025/A1350_polygon/` | dfs |
 | 9437. 【2024年庐阳区初中区赛】最佳雇佣（hire） | `2024/hire/` | online |
 | 9275：[CSP-J 2024] 接龙（chain）|  `2024/csp_chain/` |
 | 9274：[CSP-J 2024] 小木棍（sticks） | `2024/sticks/` |
@@ -35,8 +35,8 @@ A1350：[CSP-J 2025] 多边形 / polygon
 | 6544：[CSP-J 2023] 旅游巴士（bus）| `2023/bus/` | 图, priority_queue, online|
 | 6543：[CSP-J 2023] 一元二次方程（uqe）| `2023/uqe/`| 最大公因数, 开根号, online|
 | 6542：[CSP-J 2023] 公路（road） | `2023/road/` |
-| 6246：[AHOI2023初中组]评分 (score) |2023/AHOI2023_score | simple |
-| 6247：[AHOI2023初中组]数数 (count) | |dfs|
+| 6246：[AHOI2023初中组]评分 (score) | 2023/AHOI2023_score | simple |
+| 6247：[AHOI2023初中组]数数 (count) | 2023/AHOI2023_count |dfs, 前缀和, 双指针|
 | 6248：[AHOI2023初中组]行走(walk) | |
 | 6249：[AHOI2023初中组]石子(stone) | |
 | 5844：[CSP-J 2022] 解密（decode） | `decode/` |
