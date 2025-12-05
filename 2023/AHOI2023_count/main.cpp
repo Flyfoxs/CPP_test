@@ -1,17 +1,12 @@
 # include<bits/stdc++.h>
 using namespace std;
 
-vector<int> a;
+vector<long long> a;
 
-int dfs(int index, vector<int> cur){
-    // cout<<"index="<<index<<", cur: ";
-    // for(int i=0;i<cur.size();i++){
-    //     cout<<cur[i]<<" ";
-    // }
-    // cout<<endl;
+int dfs(int index, vector<long long> cur){
     if(cur.size() == 3){
 
-        if(cur[0] + cur[1] > cur[2] && cur[0] + cur[2] > cur[1] && cur[1] + cur[2] > cur[0]){
+        if(cur[0] + cur[1] > cur[2] ){
             return 1;
         }
         return 0;
@@ -23,14 +18,17 @@ int dfs(int index, vector<int> cur){
     }
 
     if(cur.size()==2){
-        if(cur[0] + cur[1] <= a[index]){
-            // cout<<"end, index="<<index<<", cur: " << endl;;
-            return 0;
+        long long ans_cur = 0;
+        for(int i=index; i<a.size();i++){
+            if(cur[0] + cur[1] <= a[i]){
+                break;
+            }
+            ans_cur ++;
         }
+        return ans_cur;
     }
-    vector<int> cur_copy = cur;
+    vector<long long> cur_copy = cur;
     cur_copy.push_back(a[index]);
-
     return dfs(index+1, cur) + dfs( index+1, cur_copy);
 }
 
@@ -45,7 +43,7 @@ int main(){
     }
 
     sort(a.begin(), a.end());
-    int ans = dfs(0, vector<int>());
+    int ans = dfs(0, vector<long long>());
     cout<<ans<<endl;
     return 0;
 }
