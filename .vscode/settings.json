@@ -29,6 +29,8 @@
         "variant": "cpp",
         "version": "cpp",
         "functional": "cpp",
-        "format": "cpp"
+        "format": "cpp",
+        "initializer_list": "cpp",
+        "valarray": "cpp"
     }
 }
