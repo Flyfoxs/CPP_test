@@ -1,51 +1,60 @@
-#include <iostream>
-#define int long long
-int N, L, R;
-int Arr[5005], SumArr[5005], NoteBook[5005][5005];
-
-int Sum(int l, int r) {
-    //从l到r的和
-	return SumArr[r] - SumArr[l - 1];
-}
-
-int DFS(int l, int r) {
-    //已合并区间是[l, r]
-	int Min = 0x7F7F7F7F7F7F7F7F; //最小值
-	if (NoteBook[l][r] != 0) {
-        //记忆化(不加20分)
-		return NoteBook[l][r];
-	}
-	if (l - 1 >= 1) {
-		//左边还有，合并左边
-		Min = std::min(Min, DFS(l - 1, r) + Sum(l, r) + Arr[l - 1]);
-	}
-	if (r + 1 <= N) {
-		//右边还有，合并右边
-		Min = std::min(Min, DFS(l, r + 1) + Sum(l, r) + Arr[r + 1]);
-	}
-	if (l == 1 && r == N) {
-        //边界条件：都合并好了
-		Min = 0;
-	}
-	NoteBook[l][r] = Min; //记录
-	return Min;
-}
-
-signed main() {
-    freopen("stone.in", "r", stdin);
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+const ll INF = (1LL<<62);
+// 6249. [AHOI2023初中组]石子(stone)
+int main() {
+	freopen("stone.in", "r", stdin);
     // freopen("stone.out", "w", stdout);
-	std::cin >> N >> L >> R;
-	for (int i = 1; i <= N; i++) {
-		std::cin >> Arr[i];
-		SumArr[i] = SumArr[i - 1] + Arr[i]; //前缀和
-	}
-	for (int i = L; i <= R; i++) {
-		std::cout << DFS(i, i) << ' '; //输出(一开始已合并区间是从i到i的)
-	}
-	std::cout << '\n';
-	return 0;
-}
 
-/**
- * g++-14 -o main.out main_v2.cpp && ./main.out
- */
+    int n, l, r;
+    if (!(cin >> n >> l >> r)) return 0;
+    vector<ll> a(n+1);
+    for (int i = 1; i <= n; ++i) cin >> a[i];
+
+    vector<ll> answers;
+    answers.reserve(r - l + 1);
+
+    for (int s = l; s <= r; ++s) {
+        int p = s - 1;         // left count
+        int q = n - s;         // right count
+
+        // build L[1..p], R[1..q] (nearest first)
+        vector<ll> L(p+1), R(q+1);
+        for (int i = 1; i <= p; ++i) L[i] = a[s - i];
+        for (int j = 1; j <= q; ++j) R[j] = a[s + j];
+
+        // 2D DP: dp[0..p][0..q]
+        // dp[i][j] = minimal weighted sum (excluding (n-1)*a[s]) after taking i from left and j from right
+        vector<vector<ll>> dp(p+1, vector<ll>(q+1, INF));
+        dp[0][0] = 0;
+
+        for (int i = 0; i <= p; ++i) {
+            for (int j = 0; j <= q; ++j) {
+                if (dp[i][j] >= INF) continue;
+                int pos = i + j; // already taken
+                if (i < p) {
+                    ll coef = (ll)(n - (pos + 1));
+                    ll cand = dp[i][j] + coef * L[i+1];
+                    if (cand < dp[i+1][j]) dp[i+1][j] = cand;
+                }
+                if (j < q) {
+                    ll coef = (ll)(n - (pos + 1));
+                    ll cand = dp[i][j] + coef * R[j+1];
+                    if (cand < dp[i][j+1]) dp[i][j+1] = cand;
+                }
+            }
+        }
+
+        ll best = dp[p][q];
+        ll total = (ll)(n - 1) * a[s] + best;
+        answers.push_back(total);
+    }
+
+    for (int i = 0; i < (int)answers.size(); ++i) {
+        if (i) cout << ' ';
+        cout << answers[i];
+    }
+    cout << '\n';
+    return 0;
+}
