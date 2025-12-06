@@ -38,7 +38,7 @@ A1350：[CSP-J 2025] 多边形 / polygon
 | 6246：[AHOI2023初中组]评分 (score) | 2023/AHOI2023_score | simple, sort(stl) |
 | 6247：[AHOI2023初中组]数数 (count) | 2023/AHOI2023_count |dfs, 前缀和, 双指针|
 | 6248：[AHOI2023初中组]行走(walk)   | |
-| 6249：[AHOI2023初中组]石子(stone)  | 2023/AHOI2023_stone |dfs, DP |
+| 6249：[AHOI2023初中组]石子(stone)  | 2023/AHOI2023_stone |dfs, DP, 前缀和 |
 | 5844：[CSP-J 2022] 解密（decode）  | `decode/` |
 | 5845：[CSP-J 2022] 逻辑表达式（expr） | `expr_5845/` |
 | 3592：表达式II (exp) | `exp_3592/` |
