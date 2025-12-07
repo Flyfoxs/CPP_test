@@ -65,15 +65,7 @@ int main()
         cin >> a[i];
     }
 
-    for(int i=0;i<n;i++){
-        for(int j=i+1;j<n;j++){
-            if(a[i] < a[j]){
-                int tmp=a[i];
-                a[i]=a[j];
-                a[j]=tmp;
-            }
-        }
-    }
+    sort(a.begin(), a.end());
 
     vector<long long> cur;
     // for(int i=0;i<n;i++){
