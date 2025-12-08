@@ -25,7 +25,7 @@ A1350：[CSP-J 2025] 多边形 / polygon
 | Description | Directory | Tag|
 |------------|-----------|--|
 | A1349: [CSP-J 2025] 异或和 / xor | `2025/A1349_xor/` |
-| A1350: [CSP-J 2025] 多边形 / polygon | `2025/A1350_polygon/` | dfs, TODO(40) |
+| A1350: [CSP-J 2025] 多边形 / polygon | `2025/A1350_polygon/` | dfs, TODO(40), online(100) 比较难, 暴力40分即可 |
 | 9437. 【2024年庐阳区初中区赛】最佳雇佣（hire） | `2024/hire/` | online |
 | 9275：[CSP-J 2024] 接龙（chain）|  `2024/csp_chain/` |
 | 9274：[CSP-J 2024] 小木棍（sticks） | `2024/sticks/` |
