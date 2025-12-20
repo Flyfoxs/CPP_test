@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+/**
+动态制表求解
+*/
 long long sum_mat(vector<vector<long long>> &mat, int left, int right)
 {
     long long sum = 0;
@@ -69,3 +71,9 @@ int main()
     // }
     return 0;
 }
+
+/**
+ 5845. [CSP-J 2022] 逻辑表达式（expr）
+ g++-14 -o main.out main.cpp && ./main.out
+ * 
+ */

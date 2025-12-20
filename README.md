@@ -39,12 +39,12 @@ A1350: [CSP-J 2025] 多边形 / polygon
 | 6542: [CSP-J 2023] 公路(road)                       | `2023/road/`           |                                              |
 | 6246: [AHOI2023初中组]评分 (score)                   | `2023/AHOI2023_score/` | simple, sort(stl)                            |
 | 6247: [AHOI2023初中组]数数 (count)                   | `2023/AHOI2023_count/` | dfs, 前缀和, 双指针                          |
-| 6248: [AHOI2023初中组]行走 (walk)                    |                        |                                              |
+| 6248: [AHOI2023初中组]行走 (walk)                    |  题目不容易读懂          |               |
 | 6249: [AHOI2023初中组]石子 (stone)                   | `2023/AHOI2023_stone/` | dfs, DP, 前缀和, TODO(80)                    |
 | 5844: [CSP-J 2022] 解密(decode)                    | `2022/decode/`         |                                              |
 | 5845: [CSP-J 2022] 逻辑表达式(expr)                 | `2022/expr_5845/`      |                                              |
 | 2007: [20CSPJ普及组]方格取数                         | `2020/grid_2007/`      |                                              |
-| 1274: 合并石子                                       | `others/1274_store/`   |                                              |
+| 1274: 合并石子                                       | `others/1274_store/`   |   DP (2种解法) + 前缀和                             |
 | 3592: 表达式II (exp)                                 | `others/3592_exp/`     |                                              |
 
 
