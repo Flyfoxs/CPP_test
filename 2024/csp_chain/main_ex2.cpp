@@ -4,6 +4,16 @@ using namespace std;
 const int N=2e5+5;
 const int M=1e2+5;
 vector<int> v[N];
+
+/*
+st[i][x] 表示：
+使用 i 次操作后，是否可以得到值 x
+
+取值含义：
+-1 ：不可达
+ 0 ：可由多个序列得到（来源不唯一）
+ j ：只能由第 j 个序列得到
+*/
 int st[M][N];
 int T,n,k,q;
 
@@ -28,14 +38,14 @@ int main() {
         st[0][1]=0;
         for(int i=1; i<=100; i++) {
             for(int j=1; j<=n; j++) {
-                int len=0;
+                int len=0; 
                 for(auto t:v[j]) {
                     len=max(len-1,0);
                     if(len) {
-                        if(st[i][t]==-1) st[i][t]=j;
-                        else if(st[i][t] && st[i][t]!=j) st[i][t]=0;
+                        if(st[i][t]==-1) st[i][t]=j; //来源唯一
+                        else if(st[i][t] && st[i][t]!=j) st[i][t]=0; //来源不唯一
                     }
-                    if(st[i-1][t]!=-1 && st[i-1][t]!=j) len=k;
+                    if(st[i-1][t]!=-1 && st[i-1][t]!=j) len=k; //重新开启一个k长度的窗口
                 }
             }
         }
@@ -50,3 +60,8 @@ int main() {
 
     return 0;
 }
+
+/*
+
+ g++-14 -o main.out main_ex2.cpp && ./main.out
+*/
