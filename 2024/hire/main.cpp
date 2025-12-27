@@ -21,11 +21,11 @@ int main() {
     for(long long i = 0; i < m; i++) {
         cin >> b[i];
     }
-    sort(a.begin(), a.end());
-    sort(b.begin(), b.end());
+    sort(a.begin(), a.end()); //需求
+    sort(b.begin(), b.end()); //工人
  
 
-    long long ans =0;
+    long long ans =0; //总费用
     long long pos = 0;
     long long count = 0;
     for(long long i = 0; i < n; i++) {
