@@ -42,7 +42,8 @@ A1350: [CSP-J 2025] 多边形 / polygon
 | 6248: [AHOI2023初中组]行走 (walk)                    |  题目不容易读懂          |               |
 | 6249: [AHOI2023初中组]石子 (stone)                   | `2023/AHOI2023_stone/` | dfs, DP, 前缀和, TODO(80), 固定开始点                    |
 | 5844: [CSP-J 2022] 解密(decode)                    | `2022/decode/`         |   数学, 方程                                           |
-| 5845: [CSP-J 2022] 逻辑表达式(expr)                 | `2022/expr_5845/`      |   stack                                     |
+| 5845: [CSP-J 2022] 逻辑表达式(expr)                 | `2022/expr_5845/`      |   stack   
+| 5846. [CSP-J 2022] 上升点列（point）                 | 2022/point            |    DP(DAG), T4                                 |
 | 2007: [20CSPJ普及组]方格取数                         | `2020/grid_2007/`      |    DP                                          |
 | 1274: 合并石子                                       | `others/1274_store/`   |   DP (2种解法) + 前缀和, 任意开始点              |
 | 3592: 表达式II (exp)                                 | `others/3592_exp/`     |   DP, DFS             |
