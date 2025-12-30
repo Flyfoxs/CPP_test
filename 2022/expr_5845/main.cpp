@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+//5845：[CSP-J 2022] 逻辑表达式（expr）
 struct Result {
     int val;
     long long sc_and;
@@ -68,7 +68,7 @@ Result eval(const string &s) {
             op.pop(); // 弹出 '('
         }
         else if (c == '&' || c == '|') {
-            while (!op.empty() && precedence(op.top()) >= precedence(c)) {
+            while (!op.empty() && precedence(op.top()) >= precedence(c)) { //栈顶的运算符优先级大于等于当前运算符, 则计算栈里面的数据
                 char o = op.top(); op.pop();
                 auto b = val.top(); val.pop();
                 auto a = val.top(); val.pop();
@@ -77,8 +77,8 @@ Result eval(const string &s) {
             op.push(c);
         }
     }
-
-    while (!op.empty()) {
+ 
+    while (!op.empty()) {//计算剩余的运算符
         char o = op.top(); op.pop();
         auto b = val.top(); val.pop();
         auto a = val.top(); val.pop();
