@@ -1,93 +1,92 @@
 #include <bits/stdc++.h>
 using namespace std;
 //5845：[CSP-J 2022] 逻辑表达式（expr）
+
 struct Result {
     int val;
     long long sc_and;
     long long sc_or;
 };
 
-// 运算符优先级
+stack<Result> val;
+stack<char> op;
+
 int precedence(char op) {
     if (op == '&') return 2;
     if (op == '|') return 1;
     return 0;
 }
 
-// 计算一次 a op b，并统计短路
 Result calc(Result a, Result b, char op) {
     Result res = {0, a.sc_and + b.sc_and, a.sc_or + b.sc_or};
-    if (op == '&') {
-        if (a.val == 0) { // 短路
+    if(op == '&'){
+        if(a.val == 0){
             res.val = 0;
-            // cout<<"short_and: a="<<a.val<<" b="<<b.val<<endl;
-            res.sc_and++;
-            // 清除左边的结果, 因为被短路了
             res.sc_or = res.sc_or - b.sc_or;
             res.sc_and = res.sc_and - b.sc_and;
-        } else {
+            res.sc_and++;
+        }else{
             res.val = a.val & b.val;
         }
-    } else if (op == '|') {
-        if (a.val == 1) { // 短路
+    }
+    else if(op == '|'){
+        if(a.val == 1){
             res.val = 1;
-            // cout<<"short_or: a="<<a.val<<" b="<<b.val<<endl;
-            res.sc_or++;
-
-            // 清除左边的结果, 因为被短路了
             res.sc_or = res.sc_or - b.sc_or;
             res.sc_and = res.sc_and - b.sc_and;
-        } else {
+            res.sc_or++;
+        }
+        else{
             res.val = a.val | b.val;
         }
     }
+    // printf("a.val=%d, b.val=%d, op=%c, res.val=%d, res.sc_and=%lld, res.sc_or=%lld\n", a.val, b.val, op, res.val, res.sc_and, res.sc_or);
     return res;
 }
 
-Result eval(const string &s) {
-    stack<Result> val;
-    stack<char> op;
-
-    for (int i = 0; i < (int)s.size(); i++) {
+Result eval(string s){
+    for(int i=0; i<s.size(); i++){
         char c = s[i];
-        // cout<<"i="<<i<<" c="<<c<<endl;
-
-        if (c == '0' || c == '1') {
-            val.push({c - '0', 0, 0});
+        if(c == '0' || c == '1'){
+            Result result = {c - '0', 0, 0};
+            val.push(result);
         }
-        else if (c == '(') {
+        else if(c == '('){
             op.push(c);
         }
-        else if (c == ')') {
-            while (!op.empty() && op.top() != '(') {
-                auto b = val.top(); val.pop();
-                auto a = val.top(); val.pop();
+        else if(c == ')'){
+            while(!op.empty() && op.top() != '('){
+                Result b = val.top(); val.pop();
+                Result a = val.top(); val.pop();
                 char o = op.top(); op.pop();
                 val.push(calc(a, b, o));
             }
             op.pop(); // 弹出 '('
         }
-        else if (c == '&' || c == '|') {
-            while (!op.empty() && precedence(op.top()) >= precedence(c)) { //栈顶的运算符优先级大于等于当前运算符, 则计算栈里面的数据
+        else if(c == '&' || c == '|'){
+            while(!op.empty() && precedence(op.top()) >= precedence(c)){
+                Result b = val.top(); val.pop();
+                Result a = val.top(); val.pop();
                 char o = op.top(); op.pop();
-                auto b = val.top(); val.pop();
-                auto a = val.top(); val.pop();
                 val.push(calc(a, b, o));
             }
             op.push(c);
         }
     }
- 
-    // 1|0&1
-    while (!op.empty()) {//计算剩余的运算符
+    // cout<< "op size="<<op.size()<<endl;
+    // cout<< "val size="<<val.size()<<endl;
+
+    while(!op.empty()){
+        Result b = val.top(); val.pop();
+        Result a = val.top(); val.pop();
         char o = op.top(); op.pop();
-        auto b = val.top(); val.pop();
-        auto a = val.top(); val.pop();
+        // printf("a.val=%d, b.val=%d, op=%c\n", a.val, b.val, o);
         val.push(calc(a, b, o));
     }
-
-    return val.top();
+    // cout<< "val value="<<val.top().val<<endl;
+    return val.top();   
 }
+ 
 
 int main() {
     ios::sync_with_stdio(false);
@@ -97,7 +96,7 @@ int main() {
 
     string s;
     cin >> s;
-
+    // cout<<"s="<<s<<endl;
     Result ans = eval(s);
     cout << ans.val << "\n" << ans.sc_and << " " << ans.sc_or << "\n";
     return 0;
@@ -105,6 +104,6 @@ int main() {
 
 /**
  5845. [CSP-J 2022] 逻辑表达式（expr）
- g++-14 -o main.out main.cpp && ./main.out
+ g++-14 -o main.out main_ex.cpp && ./main.out
  * 
  */
