@@ -1,0 +1,18 @@
+CompileFlags:
+  Add:
+    - -std=c++17
+    - -I/opt/homebrew/Cellar/gcc@14/14.3.0/include/c++/14
+    - -I/opt/homebrew/Cellar/gcc@14/14.3.0/include/c++/14/aarch64-apple-darwin24
+    - -I/opt/homebrew/Cellar/gcc@14/14.3.0/include/c++/14/backward
+    - -I/opt/homebrew/Cellar/gcc@14/14.3.0/lib/gcc/14/gcc/aarch64-apple-darwin24/14/include
+    - -I/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include
+    - -I/usr/local/include
+    - -Wno-everything
+  Compiler: /opt/homebrew/bin/g++-14
+
+Index:
+  Background: Build
+
+Diagnostics:
+  UnusedIncludes: None
+
