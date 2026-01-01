@@ -28,7 +28,7 @@ A1350: [CSP-J 2025] 多边形 / polygon
 | A1350: [CSP-J 2025] 多边形 / polygon                 | [2025/A1350_polygon/main.cpp](./2025/A1350_polygon/main.cpp) | dfs, TODO(40), online(100) 比较难, 暴力40分即可 |
 | 9437: [2024年庐阳区初中区赛]最佳雇佣(hire)(3)           | [2024/hire/main.cpp](./2024/hire/main.cpp) | 语文题, 一个项目只能一个工人                    |
 | 9438: [2024年庐阳区初中区赛]充电桩(move)(4)            | [2024/move/main.cpp](./2024/move/main.cpp) | 数学公式, 区间和, TODO(90)                   |
-| 9439: [2024年庐阳区初中区赛]减少毒素(dec)(5)           |                        | DP, TODO(0)                                           |
+| 9439: [2024年庐阳区初中区赛]减少毒素(dec)(5)           |  [2024/dec/main_ex.cpp](./2024/dec/main_ex.cpp)  | DP, 完全背包                                          |
 | 9275: [CSP-J 2024] 接龙(chain)                      | [2024/csp_chain/main.cpp](./2024/csp_chain/main.cpp) | 区间DP, 比较难                                             |
 | 9274: [CSP-J 2024] 小木棍(sticks)                   | [2024/sticks/main.cpp](./2024/sticks/main.cpp) |  DP, 思路巧                                            |
 | 7172: [AHOI2024初中]计数 (d)(4) 糖果                  | [2024/AHOI2024_d/main.cpp](./2024/AHOI2024_d/main.cpp) | 2次 dp (比较难, 看不懂答案)                |
