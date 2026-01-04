@@ -44,6 +44,7 @@ A1350: [CSP-J 2025] 多边形 / polygon
 | 5844: [CSP-J 2022] 解密(decode)                    | [2022/decode/decode.cpp](./2022/decode/decode.cpp) |   数学, 方程                                           |
 | 5845: [CSP-J 2022] 逻辑表达式(expr)                 | [2022/expr_5845/main.cpp](./2022/expr_5845/main.cpp) |   stack   
 | 5846. [CSP-J 2022] 上升点列（point）                 | [2022/point/main.cpp](./2022/point/main.cpp) |    DP(DAG), T4                                 |
+| 3203：【AHOI2021初中】坑（hole）（2）                    |[2021/hole/main_ex.cpp](./2021/hole/main_ex.cpp) | 二分查找, 贪心 」
 | 2007: [20CSPJ普及组]方格取数                         | [2020/grid_2007/main.cpp](./2020/grid_2007/main.cpp) |    DP                                          |
 | 1274: 合并石子                                       | [others/1274_store/main.cpp](./others/1274_store/main.cpp) |   DP (2种解法) + 前缀和, 任意开始点              |
 | 3592: 表达式II (exp)                                 | [others/3592_exp/main.cpp](./others/3592_exp/main.cpp) |   DP, DFS             |
