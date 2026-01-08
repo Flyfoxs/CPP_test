@@ -17,14 +17,16 @@ int main(){
     } 
 
     dp[0] = a[0][0];
-    for(int i=0;i<n;i++){
+    for(int i=1;i<n;i++){
        dp[i] = dp[i-1] + a[i][0];
     }
 
     // i:n 行, j:m 列
     for(int j=1;j<m;j++){
-        long long up[n] = {-99999};
-        long long down[n] = {-99999};
+        vector<long long> up(n, -99999);
+        vector<long long> down(n, -99999);
+        // long long up[n] = {-99999};
+        // long long down[n] = {-99999};
         //left -> right
         for(int i=0;i<n;i++){
             up[i] =  dp[i] + a[i][j];
@@ -68,3 +70,7 @@ int main(){
    return 0;
 
 }
+
+/**
+g++-14 -o main.out main.cpp && ./main.out
+*/
