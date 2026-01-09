@@ -1,36 +1,39 @@
 {
+    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.default.browse.limitSymbolsToIncludedHeaders": false,
+    "C_Cpp.default.intelliSenseMode": "macos-clang-x64",
+    "C_Cpp.default.compilerPath": "/usr/bin/clang++",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.defines": [
+        "__GNUC__",
+        "__float128=long double",
+        "__FLOAT128__"
+    ],
+    "C_Cpp.default.compilerArgs": [
+        "-Wno-error",
+        "-D__float128=long double"
+    ],
+    "C_Cpp.dimInactiveRegions": false,
+    "C_Cpp.default.systemIncludePath": [],
+    "C_Cpp.default.intelliSenseEngine": "default",
+    "C_Cpp.intelliSenseEngineFallback": "disabled",
+    "C_Cpp.workspaceParsing": "default",
     "files.associations": {
-        "*.java": "java",
-        "complex": "cpp",
-        "vector": "cpp",
-        "iosfwd": "cpp",
-        "iterator": "cpp",
-        "ios": "cpp",
-        "tuple": "cpp",
-        "chrono": "cpp",
-        "limits": "cpp",
-        "algorithm": "cpp",
-        "queue": "cpp",
-        "stack": "cpp",
-        "random": "cpp",
-        "iostream": "cpp",
-        "cmath": "cpp",
-        "ostream": "cpp",
-        "__node_handle": "cpp",
-        "*.tcc": "cpp",
-        "array": "cpp",
-        "memory_resource": "cpp",
-        "future": "cpp",
-        "mutex": "cpp",
-        "optional": "cpp",
-        "ranges": "cpp",
-        "scoped_allocator": "cpp",
-        "utility": "cpp",
-        "variant": "cpp",
-        "version": "cpp",
-        "functional": "cpp",
-        "format": "cpp",
-        "initializer_list": "cpp",
-        "valarray": "cpp"
-    }
+        "bits/stdc++.h": "cpp"
+    },
+    "clangd.arguments": [
+        "--header-insertion=never",
+        "--completion-style=detailed",
+        "--background-index",
+        "--clang-tidy",
+        "--fallback-style=llvm",
+        "--header-filter=.*",
+        "--system-headers",
+        "--diagnostic-style=unset"
+    ],
+    "clangd.diagnostics": {
+        "unusedIncludes": "None",
+        "missingIncludes": "None"
+    },
+    "clangd.semanticHighlighting": true
 }
