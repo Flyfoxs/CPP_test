@@ -40,13 +40,13 @@ int main() {
     int ans = 0;
 
     // 3️⃣ 枚举结尾点 i
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {//TO
 
         // 单独选这个点，不用补点
         dp[i][0] = 1;
 
         // 4️⃣ 尝试从之前的点 p 转移过来
-        for (int p = 0; p < i; p++) {
+        for (int p = 0; p < i; p++) {//From
 
             long long dx = pts[i].x - pts[p].x;
             long long dy = pts[i].y - pts[p].y;
