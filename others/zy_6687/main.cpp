@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 vector<int> a;
+//6687. 【剪枝优化】子集和问题
 struct Node{
  vector<int> ans;
  vector<int> pos_list;
@@ -36,12 +37,9 @@ int dfs(int pos, Node node){
     //     cout<<a[best_node.pos_list[i]]<<" ";
     // }
     // cout<<endl;
-    if(is_better(node)){
-
-        // return 0;
-    }else{
+    if(!is_better(node)){
         return 0;
-    }
+    } 
 
     Node node_new = node;
     node_new.ans.push_back(a[pos]);
@@ -64,13 +62,14 @@ int dfs(int pos, Node node){
         // return 1;
     }
 
+    if(pos == a.size()-1){//dfs结束
+        return 0;
+    }
+
     if(node_new.score < c){ //小于c，继续dfs
         int flag_left = dfs(pos+1, node_new);
     }
 
-    if(pos == a.size()-1){//dfs结束
-        return 0;
-    }
 
     int flag_right = dfs(pos+1, node); //不选当前元素，继续dfs
 
