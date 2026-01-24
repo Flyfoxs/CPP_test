@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+// 6688. 剪格子
 using namespace std;
 int a[10][10], he;
 int m, n, ans =1000;

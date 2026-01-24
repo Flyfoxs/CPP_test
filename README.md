@@ -48,7 +48,8 @@ A1350: [CSP-J 2025] 多边形 / polygon
 | 2007: [20CSPJ普及组]方格取数                         | [2020/grid_2007/main.cpp](./2020/grid_2007/main.cpp) |    DP                                          |
 | 1274: 合并石子                                       | [others/1274_store/main.cpp](./others/1274_store/main.cpp) |   DP (2种解法) + 前缀和, 任意开始点              |
 | 3592: 表达式II (exp)                                 | [others/3592_exp/main.cpp](./others/3592_exp/main.cpp) |   DP, DFS             |
-| 6687. 【剪枝优化】子集和问题                            | [others/zy_6687/main.cpp/](./others/zy_6687/main.cpp) | DFS, 剪枝 |
+| 6687: 【剪枝优化】子集和问题                            | [others/zy_6687/main.cpp/](./others/zy_6687/main.cpp) | DFS, 剪枝 |
+| 6688. 剪格子                                          | [others/zy_6688/main_v2.cpp](./others/zy_6688/main_v2.cpp) | DFS |
 
 # Ref:
 
