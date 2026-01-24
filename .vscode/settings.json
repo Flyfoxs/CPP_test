@@ -10,5 +10,8 @@
     ],
     // Enable diagnostics
     "clangd.diagnostics": true,
-    "clangd.checkUpdates": true
+    "clangd.checkUpdates": true,
+    
+    // Terminal scrollback buffer - set to maximum
+    "terminal.integrated.scrollback": 999999
 }
