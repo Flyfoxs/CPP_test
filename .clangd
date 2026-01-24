@@ -7,7 +7,11 @@ CompileFlags:
     - -I/opt/homebrew/Cellar/gcc@14/14.3.0/lib/gcc/14/gcc/aarch64-apple-darwin24/14/include
     - -I/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk/usr/include
     - -I/usr/local/include
-    - -Wno-everything
+    - -Wall
+    - -Wextra
+    - -Wpedantic
+    - -Werror=unused-variable
+    - -Werror=uninitialized
     - -D__float128=long double
     - -D__FLOAT128__
   Compiler: /opt/homebrew/bin/g++-14
