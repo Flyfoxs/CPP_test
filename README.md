@@ -50,6 +50,7 @@ A1350: [CSP-J 2025] 多边形 / polygon
 | 3592: 表达式II (exp)                                 | [others/3592_exp/main.cpp](./others/3592_exp/main.cpp) |   DP, DFS             |
 | 6687: 【剪枝优化】子集和问题                            | [others/zy_6687/main.cpp/](./others/zy_6687/main.cpp) | DFS, 剪枝 |
 | 6688. 剪格子                                          | [others/zy_6688/main_v2.cpp](./others/zy_6688/main_v2.cpp) | DFS |
+| 6695. 图中点的层次                                      | [others/zy_6695/main.cpp](./others/zy_6695/main.cpp) | 图, dijkstra |
 
 # Ref:
 
