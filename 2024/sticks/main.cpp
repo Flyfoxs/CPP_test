@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// 9274：[CSP-J 2024] 小木棍（sticks）50 分
 // 每个数字0-9需要的小木棍数量
 const int stick_cost[10] = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};
 
@@ -42,8 +42,6 @@ string solve(int n) {
 }
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
 
     freopen("sticks.in", "r", stdin);
     // freopen("sticks.out", "w", stdout);
