@@ -30,7 +30,7 @@ A1350: [CSP-J 2025] 多边形 / polygon
 | 9438: [2024年庐阳区初中区赛]充电桩(move)(4)            | [2024/move/main.cpp](./2024/move/main.cpp) | 数学公式, 区间和, TODO(90)                   |
 | 9439: [2024年庐阳区初中区赛]减少毒素(dec)(5)           |  [2024/dec/main_ex.cpp](./2024/dec/main_ex.cpp)  | DP, 完全背包                                          |
 | 9275: [CSP-J 2024] 接龙(chain)                      | [2024/csp_chain/main.cpp](./2024/csp_chain/main.cpp) | 区间DP, 比较难                                             |
-| 9274: [CSP-J 2024] 小木棍(sticks)                   | [2024/sticks/main.cpp](./2024/sticks/main.cpp) |  DP, 思路巧                                            |
+| 9274: [CSP-J 2024] 小木棍(sticks)                   | [2024/sticks/main_ex2.cpp](./2024/sticks/main_ex2.cpp) |  DP, 思路巧                                            |
 | 7172: [AHOI2024初中]计数 (d)(4) 糖果                  | [2024/AHOI2024_d/main.cpp](./2024/AHOI2024_d/main.cpp) | 2次 dp (比较难, 看不懂答案)                |
 | 7171: [AHOI2024初中]操作 (c)(3)                       | [2024/AHOI2024_c/main.cpp](./2024/AHOI2024_c/main.cpp) | online, 差分数组, 前缀和                     |
 | 7170: [AHOI2024初中]立方根 (b)(2)                     | [2024/AHOI2024_b/main.cpp](./2024/AHOI2024_b/main.cpp) | 数学, 分段累计                                       |

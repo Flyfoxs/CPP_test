@@ -14,19 +14,19 @@ int main(){
 			printf("-1\n");
 			continue;
 		} //特判
-		int tmp=n,rem=(n+6)/7*7-n;
+		int tmp=n,rem=n-(n)/7*7;
+		rem = rem==0 ? 7:rem; //最后剩余的是7(0)个木棍
         //数的长度为(n+6)/7, 已经可以确定
-        // tmp 表示还没有用的小木棍数量，rem 表示全为 8 的情况需要减去多少根木棍(需要补几根才行)
+        // tmp 表示还没有用的小木棍数量，rem表示全部取8后, 剩余多少根木棍
 		while(tmp>0){
-            // cout << endl << "tmp=" << tmp << " rem=" << rem << endl;
 			for(int i=0;i<10;i++){
                 // cout << "i=" << i << " tmp=" << tmp << " stick[i]=" << stick[i] << endl;
 				if(tmp==n&&i==0) continue; //不能有前导零
 				if(tmp<stick[i]) continue; //无法拼成这个数字
 				//最后剩余的不能是1
-				if(7-stick[i]<=rem&&tmp-stick[i]!=1){
+				if(stick[i]>=rem&&tmp-stick[i]!=1){
 					tmp=tmp-stick[i];
-					rem=rem-(7-stick[i]);
+					rem=rem+7-stick[i];
 					printf("%d",i);
 					break;
 				} //如果可以就选择，这一定是最小的
