@@ -57,8 +57,13 @@ A1350: [CSP-J 2025] 多边形 / polygon
 [信息学奥赛CSP和GESP答案](https://aimadao.com/wiki/1560506890453024)
 
 6249: [AHOI2023初中组]石子 (stone)  
+
 9274: [CSP-J 2024] 小木棍(sticks)
+
 2007: [20CSPJ普及组]方格取数
+
 3203：【AHOI2021初中】坑（hole）（2）
+
 7171: [AHOI2024初中]操作 (c)(3)   
+
 7170: [AHOI2024初中]立方根 (b)(2) 
