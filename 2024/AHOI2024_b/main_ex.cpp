@@ -16,13 +16,17 @@ long long sum_range(long long begin, long long end){
     long long root = floor(cbrt(begin));
     long long root_end = ceil(cbrt(end));
     // cout<<"root="<<root<<" root_end="<<root_end<<endl;
+
+    // 计算每个区间的立方根的和
     long long sum = 0;
     for(long long i=root;i<=root_end ;i++){
         long long cur_root = i;
 
+        // 计算当前区间的立方根的段段开始和结束, 一段一段的计算
         long long cur_begin = max(begin, pow_long(i));
         long long cur_end = min(end, pow_long(i+1)-1);
 
+        // 计算当前区间的立方根的和
         sum = sum + cur_root* max(0ll, cur_end - cur_begin + 1);
         // cout<<"i="<<i<<" cur_begin="<<cur_begin<<" cur_end="<<cur_end<<" cur_root="<<cur_root<<" sum="<<sum<<", end="<<end<<endl;  
 

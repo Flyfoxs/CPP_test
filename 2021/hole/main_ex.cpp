@@ -12,7 +12,7 @@ struct Node{
 	}
 } t[maxn];
 ll n,m,ans=1e16;
-ll a[maxn],b[maxn],r[maxn]; //a: Rats, b: Holes, r: Right Hole
+ll a[maxn],b[maxn],r[maxn]; //a: Rats, b: Holes, r:  Right Hole
 
 int main()
 {

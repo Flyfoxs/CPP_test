@@ -1,7 +1,7 @@
 //冷静，冷静，冷静
 //调不出来就重构 
 // https://blog.csdn.net/qq_74190237/article/details/139241576
-//7171: [AHOI2024初中]操作 (c)(3) 
+//7171: [AHOI2024初中]操作 (c)(3)  
 #include<bits/stdc++.h>
 #define endl '\n'
 using namespace std;

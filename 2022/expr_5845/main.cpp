@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-//5845：[CSP-J 2022] 逻辑表达式（expr）
+//5845: [CSP-J 2022] 逻辑表达式(expr)
 struct Result {
     int val;
     long long sc_and;
@@ -104,7 +104,7 @@ int main() {
 }
 
 /**
- 5845. [CSP-J 2022] 逻辑表达式（expr）
+ 5845: [CSP-J 2022] 逻辑表达式(expr)
  g++-14 -o main.out main.cpp && ./main.out
  * 
  */

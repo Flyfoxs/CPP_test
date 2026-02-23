@@ -13,3 +13,4 @@ del.log
 
 .vscode/settings.json
 *_tmp.cpp
+**/.DS_Store

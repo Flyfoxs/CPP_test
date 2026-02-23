@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-// 7171：【AHOI2024初中】操作 (c)(3)
+// 7171: [AHOI2024初中]操作 (c)(3)  
 
 vector<int> mat_n ; //操作结果矩阵
 vector<vector<int>> mat_m; // 机器矩阵
